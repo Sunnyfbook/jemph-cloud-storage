@@ -57,7 +57,6 @@ export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [showStorage, setShowStorage] = useState(false);
-  const [viewMode, setViewMode] = useState<'list' | 'grid'>('list');
   const [currentPath, setCurrentPath] = useState<FolderPath[]>([{ id: '0', name: 'Home' }]);
   const [downloads, setDownloads] = useState<Download[]>([]);
   
@@ -279,8 +278,6 @@ export default function Home() {
                   <FileList 
                     files={paginatedFiles} 
                     onFileClick={handleFileClick}
-                    viewMode={viewMode}
-                    onViewModeChange={setViewMode}
                   />
                   <Pagination
                     currentPage={currentPage}
