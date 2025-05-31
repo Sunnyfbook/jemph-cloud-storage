@@ -11,6 +11,7 @@ interface FolderPath {
 
 function App() {
   const [currentPath, setCurrentPath] = useState<FolderPath[]>([{ id: '0', name: 'Home' }]);
+  const [viewMode, setViewMode] = useState<'list' | 'grid'>('list');
   const [files] = useState<FileItem[]>([
     { 
       id: '1',
@@ -104,6 +105,8 @@ function App() {
           <FileList 
             files={files} 
             onFileClick={handleFileClick} 
+            viewMode={viewMode}
+            onViewModeChange={setViewMode}
           />
         </main>
       </div>
